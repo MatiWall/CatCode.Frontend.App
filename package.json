@@ -11,6 +11,10 @@
     "local-add": "yarn add --registry http://verdaccio.mw.local/"
   },
   "dependencies": {
+    "@plugger/app": "0.1.4-dev",
+    "@plugger/configuration-core": "^0.1.2",
+    "@plugger/extension": "^0.1.0",
+    "@plugger/utils": "^0.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
