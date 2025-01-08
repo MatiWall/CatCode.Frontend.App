@@ -1230,6 +1230,19 @@
     yaml "^2.6.1"
     zod "^3.24.1"
 
+"@plugger/configuration-loader@0.1.15-dev2":
+  version "0.1.15-dev2"
+  resolved "http://verdaccio.mw.local/@plugger/configuration-loader/-/configuration-loader-0.1.15-dev2.tgz#43679d2708ce4f0a98faa3e9881518534f739d71"
+  integrity sha512-DwR1lh95Qng/4G4drWDTLAQg+Y96dMhXggrcMfd6dkWjMpH4bKpc62TI+0c7umQdpP62bdlerMgsCxkmZhYlJg==
+  dependencies:
+    "@plugger/configuration-core" "^0.1.2"
+    "@plugger/utils" "^0.0.2"
+    fs "^0.0.1-security"
+    tsx "^4.19.2"
+    typescript "^5.7.2"
+    yaml "^2.6.1"
+    zod "^3.24.1"
+
 "@plugger/configuration-loader@^0.1.15-dev":
   version "0.1.15-dev"
   resolved "http://verdaccio.mw.local/@plugger/configuration-loader/-/configuration-loader-0.1.15-dev.tgz#9eee78dbc20bdc1d9d4785eb5a06334f1c711198"
@@ -1242,6 +1255,17 @@
     typescript "^5.7.2"
     yaml "^2.6.1"
     zod "^3.24.1"
+
+"@plugger/extension@0.1.2":
+  version "0.1.2"
+  resolved "http://verdaccio.mw.local/@plugger/extension/-/extension-0.1.2.tgz#2e93a30e4df0829303c1f9f93b62cb3dd30d279d"
+  integrity sha512-QcixM6boBXWrIPcmu2v9lZ8r1E6CWH3QLnHKwHYTAGRPbgAULKOb9mJKuOIa6OfyU7SF8X9Fut9JtoxICRANIw==
+  dependencies:
+    "@plugger/routing" "file:../Plugger.Frontend.Routing"
+    "@plugger/utils" "file:../Plugger.Frontend.Utils"
+    lodash "^4.17.21"
+    uuid "^11.0.3"
+    zod "^3.23.8"
 
 "@plugger/extension@^0.1.0":
   version "0.1.0"
@@ -1266,10 +1290,25 @@
     uuid "^10.0.0"
     yarn "^1.22.22"
 
+"@plugger/routing@file:../Plugger.Frontend.Routing":
+  version "0.1.3"
+  dependencies:
+    react "^18.3.1"
+    react-dom "^18.3.1"
+    react-router-dom "^6.27.0"
+    typescript "^5.6.3"
+    uuid "^10.0.0"
+    yarn "^1.22.22"
+
 "@plugger/utils@0.0.2", "@plugger/utils@^0.0.2":
   version "0.0.2"
   resolved "http://verdaccio.mw.local/@plugger/utils/-/utils-0.0.2.tgz#e284b1f9c929debef2a979cf4cd4fcfbcc46c931"
   integrity sha512-ah+TdnzSAPmvQu2QaRYbd8wSQw/GlGHW1JIQvoehAJvVTr4x7pB0QpShIdv4mlwy+QjvVOhmsYqBjeMju9TFbA==
+  dependencies:
+    typescript "^5.7.2"
+
+"@plugger/utils@file:../Plugger.Frontend.Utils":
+  version "0.0.2"
   dependencies:
     typescript "^5.7.2"
 

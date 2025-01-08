@@ -1,2 +1,5 @@
 app: 
   title: test
+extensions:
+  component:app/app: 
+    title: hello from config
