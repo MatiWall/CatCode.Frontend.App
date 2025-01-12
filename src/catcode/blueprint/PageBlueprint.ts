@@ -1,25 +1,27 @@
-import { ExtensionKind, coreDataRef, createExtensionBluePrint, createExtensionInputNode } from "../extension"
-import { coreRouteRef } from "../extension/CoreExtensionData"
+import {createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "@plugger/extension"
 
 
+
+const pageDataRef = createExtensionDataRef();
+const pageMountPointDataRef = createExtensionDataRef();
 
 const PageBlueprint = createExtensionBluePrint({
-    kind: ExtensionKind.Component,
-    attachToo: {namespace: 'app', name: 'routing', kind: ExtensionKind.Routing}, 
+    kind: 'page',
+    attachToo: {namespace: 'app', name: 'routing', kind: 'routes'}, 
     output: [
-        coreDataRef.corePageRef,
-        coreDataRef.coreRoutePath,
-        coreDataRef.coreRouteRef
+        pageDataRef,
+        pageMountPointDataRef
     ],
     provider: ({input, config, params}) => [
-        coreDataRef.coreRoutePath.with(params?.route), 
-        coreRouteRef.with(params?.routeRef),
-        coreDataRef.corePageRef.with(params?.page)
+        pageDataRef.with(params?.page), 
+        pageMountPointDataRef.with(params?.routeRef),
     ]
 
 })
 
 
 export {
-    PageBlueprint
+    PageBlueprint,
+    pageDataRef,
+    pageMountPointDataRef
 }

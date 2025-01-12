@@ -1,37 +1,40 @@
 import { createApp } from "@plugger/app";
-import { rootExtensionBluePrint, createExtension , rootComponentRef} from "@plugger/extension";
+import { 
+    rootExtensionBluePrint,
+    createExtension, 
+    rootComponentRef, 
+    createExtensionDataRef, 
+    createExtensionInputNode,
+    createPlugin
+} from "@plugger/extension";
 import { EnvConfigLoader } from '@plugger/configuration-loader'
 
 import {z} from 'zod';
+import { AppBlueprint } from "./blueprint/AppBlueprint";
+import { AppLayoutBlueprint } from "./blueprint/AppLayoutBlueprint";
+import { NavbarBlueprint } from "./blueprint/NavbarBlueprint";
+import { RouteResolverBlueprint } from "./blueprint/RoutesBlueprint";
+import { testPlugin, testNavbarItem, testRouteBind, testPage } from "./page";
 
 
-const testExtension = createExtension({
-    namespace: 'app',
-    name: 'app',
-    kind: 'component',
-    attachToo: {namespace: 'root', name: 'app', kind: 'component'},
-    output: [
-        rootComponentRef
-    ], 
-    configSchema: z.object({
-        title: z.string().default('hello from schema')
-    }),
-    provider: ({input, config}) => {
-        return [
-            rootComponentRef.with(<div>this is from my custom extension {config.title}</div>)
-        ]
-    }
-})
 
 const app = createApp({
     rootExtensions: [
         rootExtensionBluePrint.make(),
-        testExtension
+        AppBlueprint.make(),
+        AppLayoutBlueprint.make(),
+        NavbarBlueprint.make(),
+        RouteResolverBlueprint.make(),
+
+        testNavbarItem,
+        testRouteBind,
+        testPage
+    ],
+    plugins: [
+        //testPlugin
     ],
     configLoader: new EnvConfigLoader('APP_CONFIG')
 });
-
-console.log(app.configLoader.getExtensionConfig('app', 'app', 'component'))
 
 const Root = app.createRoot();
 export default Root

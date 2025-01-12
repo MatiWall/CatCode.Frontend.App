@@ -1,46 +1,75 @@
 import React from 'react'
-import { ExtensionKind, coreDataRef, createExtensionBluePrint, createExtensionInputNode } from "../extension"
+import { createExtensionBluePrint, createExtensionInputNode, createExtensionDataRef } from "@plugger/extension"
 
-import {AppRouter, Routes, createRoutableComponent} from '@catcode/core-routing'
-
-
+import {AppRouter, RouteResolver, Routes, createRoutableComponent, createRouteResolver} from '@plugger/routing'
 
 
-const RoutesBlueprint = createExtensionBluePrint({
-    kind: ExtensionKind.Routing,
+const routeResolverDataRef = createExtensionDataRef();
+
+const mountPointDataRef = createExtensionDataRef();
+const mountPathDataRef = createExtensionDataRef();
+
+const RouteResolverBlueprint = createExtensionBluePrint({
+    kind: 'resolver',
     namespace: 'app',
     name: 'routing',
-    attachToo: {namespace: 'root', name: 'app', kind: ExtensionKind.Component}, 
+    attachToo: {namespace: 'app', name: 'app', kind: 'app'}, 
     output: [
-        coreDataRef.coreRoutesRef
+        routeResolverDataRef
     ],
     input: {
-        path: createExtensionInputNode({ref: coreDataRef.coreRoutePath, allowMultiple: true}),
-        routeRef: createExtensionInputNode({ref:coreDataRef.coreRouteRef, allowMultiple: true}),
-        component: createExtensionInputNode({ref: coreDataRef.corePageRef, allowMultiple: true})
+        path: createExtensionInputNode({ref: mountPointDataRef, allowMultiple: true}),
+        routeRef: createExtensionInputNode({ref: mountPathDataRef, allowMultiple: true}),
     },
 
     provider: ({input, config}) => {
-        const paths = input.path
+        const paths = input.path;
+        const routeRefs = input.routeRef;
 
-        const routableComponents = [];
-        for (let i=0; i <  paths.length; i++){
-            routableComponents.push(
-                createRoutableComponent({
-                    mountPoint: input.routeRef[i],
-                    path: input.path[i],
-                    component: input.component[i]
-                })
-                )
+        const routeResolver = createRouteResolver(); // Setting up global route resolver ensuring routes can be resolved at any point in the app.
+        
+        if (paths.length !== routeRefs.length){
+            throw new Error('Number of paths and route refs are not equal.')
         }
 
+        for (let i=0; paths.length; i++){
+            routeResolver.addRoute(paths[i], routeRefs[i]);
+        }
+
+
+
         return [
-            coreDataRef.coreRoutesRef.with(<Routes routeBinds={routableComponents}/>)
+            routeResolverDataRef.with<RouteResolver>(routeResolver)
+        ]
+    }
+
+})
+
+
+const RouteBindBluePrint = createExtensionBluePrint({
+    kind: 'bind',
+    namespace: 'app',
+    name: 'routing',
+    attachToo: {namespace: 'app', name: 'routing', kind: 'resolver'}, 
+    output: [
+        mountPointDataRef,
+        mountPathDataRef
+    ],
+
+    provider: ({input, config, params}) => {
+        
+
+        return [
+            mountPathDataRef.with(params?.path),
+            mountPointDataRef.with(params?.routeRef)
         ]
     }
 
 })
 
 export {
-    RoutesBlueprint
+    RouteResolverBlueprint,
+    routeResolverDataRef,
+
+    RouteBindBluePrint
 }

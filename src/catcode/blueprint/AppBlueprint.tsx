@@ -1,26 +1,25 @@
 
 
 import React, { ReactElement } from "react";
-import { ExtensionKind, coreDataRef, createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "../extension"
-import { coreRouteRef } from "../extension/CoreExtensionData"
-import { appLayoutRef } from './AppLayputBlueprint'
-import { AppRouter } from "@catcode/core-routing";
-AppRouter
+import {createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode, rootComponentRef } from "@plugger/extension"
+import { appLayoutRef } from './AppLayoutBlueprint'
+import { AppRouter, RouteResolver } from "@plugger/routing";
+import { routeResolverDataRef } from "./RoutesBlueprint";
 
-const appDataRef = createExtensionDataRef();
 
 const AppBlueprint = createExtensionBluePrint({
-    kind: ExtensionKind.Component,
+    kind: 'app',
     namespace: 'app',
     name: 'app',
-    attachToo: {namespace: 'root', name: 'app', kind: ExtensionKind.Component}, 
-    output: [appDataRef],
+    attachToo: {namespace: 'root', name: 'app', kind: 'component'}, 
+    output: [rootComponentRef],
     input: {
-        app: createExtensionInputNode({ref: appLayoutRef})
+        app: createExtensionInputNode({ref: appLayoutRef}),
+        routeResolver: createExtensionInputNode({ref: routeResolverDataRef})
     },
     provider: ({input, config}) => [
-        appDataRef.with<ReactElement>(
-            <AppRouter>
+        rootComponentRef.with<ReactElement>(
+            <AppRouter resolver={input.routeResolver}>
                 {input.app}
             </AppRouter>
             ), 

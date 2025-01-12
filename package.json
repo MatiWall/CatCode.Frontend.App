@@ -8,13 +8,19 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "local-add": "yarn add --registry http://verdaccio.mw.local/"
+    "local-add": "yarn add --registry http://verdaccio.mw.local/", 
+    "start": "plugger start frontend"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.3.1",
     "@plugger/app": "0.1.4-dev",
+    "@plugger/cli-core": "0.1.2",
     "@plugger/configuration-core": "^0.1.2",
     "@plugger/configuration-loader": "0.1.15-dev2",
     "@plugger/extension": "0.1.2",
+    "@plugger/routing": "^0.1.4",
     "@plugger/utils": "^0.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
