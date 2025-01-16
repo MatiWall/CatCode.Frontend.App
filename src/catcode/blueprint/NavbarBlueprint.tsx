@@ -29,26 +29,29 @@ const NavbarBlueprint = createExtensionBluePrint({
         tools: createExtensionInputNode({ref: toolDataRef, allowMultiple: true})
     },
     provider: ({input, config}) =>{
-        return [
-            navbarRef.with(
-              <Box>
-                <CssBaseline/>
-                <Toolbar></Toolbar>
-                <Divider/>
-                    <Toolbar sx={{p: 1}}>
-                    <Typography>
-                        {'Navbar' || input.routeItems}
-                    </Typography>
-                    </Toolbar>
-                <Divider/>
+
+        const Navbar = () => (
+            <Box>
+            <CssBaseline/>
+            <Toolbar></Toolbar>
+            <Divider/>
                 <Toolbar sx={{p: 1}}>
-                    <Typography>
-                        Tools
-                    </Typography>
-                    {input.tools}
+                <Typography>
+                    {input.routeItems.map(Item => <Item/>) || 'Navbar'}
+                </Typography>
                 </Toolbar>
-              </Box>
-            )
+            <Divider/>
+            <Toolbar sx={{p: 1}}>
+                <Typography>
+                    Tools
+                </Typography>
+                {input.tools}
+            </Toolbar>
+          </Box>
+        )
+
+        return [
+            navbarRef.with(Navbar)
         ]
     }
 })

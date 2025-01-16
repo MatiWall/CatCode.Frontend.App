@@ -14,7 +14,8 @@ import { AppBlueprint } from "./blueprint/AppBlueprint";
 import { AppLayoutBlueprint } from "./blueprint/AppLayoutBlueprint";
 import { NavbarBlueprint } from "./blueprint/NavbarBlueprint";
 import { RouteResolverBlueprint } from "./blueprint/RoutesBlueprint";
-import { testPlugin, testNavbarItem, testRouteBind, testPage } from "./page";
+import {testNavbarItem, testRouteBind, testPage, testNavbarItem2, testPage2, testRouteBind2 } from "./page";
+import { AppRoutesBlueprint } from "./blueprint/AppRoutes";
 
 
 
@@ -25,10 +26,12 @@ const app = createApp({
         AppLayoutBlueprint.make(),
         NavbarBlueprint.make(),
         RouteResolverBlueprint.make(),
+        AppRoutesBlueprint.make(),
 
         testNavbarItem,
         testRouteBind,
-        testPage
+        testPage,
+        testNavbarItem2, testPage2, testRouteBind2 
     ],
     plugins: [
         //testPlugin

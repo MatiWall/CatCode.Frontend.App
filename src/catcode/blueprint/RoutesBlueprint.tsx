@@ -18,8 +18,8 @@ const RouteResolverBlueprint = createExtensionBluePrint({
         routeResolverDataRef
     ],
     input: {
-        path: createExtensionInputNode({ref: mountPointDataRef, allowMultiple: true}),
-        routeRef: createExtensionInputNode({ref: mountPathDataRef, allowMultiple: true}),
+        path: createExtensionInputNode({ref: mountPathDataRef, allowMultiple: true}),
+        routeRef: createExtensionInputNode({ref: mountPointDataRef, allowMultiple: true}),
     },
 
     provider: ({input, config}) => {
@@ -32,7 +32,7 @@ const RouteResolverBlueprint = createExtensionBluePrint({
             throw new Error('Number of paths and route refs are not equal.')
         }
 
-        for (let i=0; paths.length; i++){
+        for (let i=0; i < paths.length; i++){
             routeResolver.addRoute(paths[i], routeRefs[i]);
         }
 
@@ -57,8 +57,6 @@ const RouteBindBluePrint = createExtensionBluePrint({
     ],
 
     provider: ({input, config, params}) => {
-        
-
         return [
             mountPathDataRef.with(params?.path),
             mountPointDataRef.with(params?.routeRef)

@@ -30,9 +30,16 @@ const AppRoutesBlueprint = createExtensionBluePrint({
                 component: page
             })
         );
+
+        const AppRoutes = () => {
+            
+            
+            
+            return <Routes routeBinds={routableComponents}/>
+        }
         
         return [
-            contentRef.with(<Routes routeBinds={routableComponents}/>)
+            contentRef.with(AppRoutes)
     ]
 }
 });

@@ -7,7 +7,7 @@ const pageMountPointDataRef = createExtensionDataRef();
 
 const PageBlueprint = createExtensionBluePrint({
     kind: 'page',
-    attachToo: {namespace: 'app', name: 'routing', kind: 'routes'}, 
+    attachToo: {namespace: 'app', name: 'app', kind: 'routes'}, 
     output: [
         pageDataRef,
         pageMountPointDataRef

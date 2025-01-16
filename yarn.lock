@@ -833,18 +833,6 @@
     "@babel/helper-string-parser" "^7.25.9"
     "@babel/helper-validator-identifier" "^7.25.9"
 
-"@catcode/core-routing@0.1.3":
-  version "0.1.3"
-  resolved "http://verdaccio.mw.local/@catcode/core-routing/-/core-routing-0.1.3.tgz#8b5e2d557568dcb49964d517644f2cb78e0ab3e4"
-  integrity sha512-+alfSqHZosewwy8BYZHKnmKHp5DqRaKEtYF+DEJjGxxxuSrfXuDn0Ps731KlEYJPn/IeALKHvrNY+fP/N5zEZg==
-  dependencies:
-    react "^18.3.1"
-    react-dom "^18.3.1"
-    react-router-dom "^6.27.0"
-    typescript "^5.6.3"
-    uuid "^10.0.0"
-    yarn "^1.22.22"
-
 "@emotion/babel-plugin@^11.13.5":
   version "11.13.5"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.13.5.tgz#eab8d65dbded74e0ecfd28dc218e75607c4e7bc0"
@@ -1512,15 +1500,15 @@
     prop-types "^15.8.1"
     react-is "^19.0.0"
 
-"@plugger/app@0.1.4-dev":
-  version "0.1.4-dev"
-  resolved "http://verdaccio.mw.local/@plugger/app/-/app-0.1.4-dev.tgz#526688a672263d7c38c872902e015c2cce302682"
-  integrity sha512-5WvkF+rlCYB1c3an6GueJScQv3ICsIT9AgNthNad97PLgkYFQtHfiWfFhueDhkmJNVIpR6H9p+6CVP3nR5aO7w==
+"@plugger/app@^0.1.6":
+  version "0.1.6"
+  resolved "http://verdaccio.mw.local/@plugger/app/-/app-0.1.6.tgz#ddbf06f0ea429693afe4bcdea7621c8648079ca2"
+  integrity sha512-DnZn8bpZpQAYBFeWe7c8IsiD6lj9zfmZaQk3YFnJ8KALWLna18s5Nb7RiyEftLdzjucajNlTusvf2h7QJS4NQg==
   dependencies:
     "@babel/preset-typescript" "^7.26.0"
     "@plugger/configuration-core" "^0.1.2"
     "@plugger/configuration-loader" "^0.1.15-dev"
-    "@plugger/extension" "^0.1.0"
+    "@plugger/extension" "^0.1.3"
     "@plugger/routing" "^0.1.3"
     "@plugger/utils" "^0.0.2"
     react "^18.3.1"
@@ -1587,13 +1575,13 @@
     uuid "^11.0.3"
     zod "^3.23.8"
 
-"@plugger/extension@^0.1.0":
-  version "0.1.0"
-  resolved "http://verdaccio.mw.local/@plugger/extension/-/extension-0.1.0.tgz#cdd823b212a81a2bc37e84a34c58da04670de259"
-  integrity sha512-se+gnw/5ROfb3oCz53o/TavcMP7bLl0aIrKLG2OPoMAd33h8Yw1Ou1nV+tgAkGCeXIeirAIPG+tyU3dYPDFY9w==
+"@plugger/extension@^0.1.3":
+  version "0.1.3"
+  resolved "http://verdaccio.mw.local/@plugger/extension/-/extension-0.1.3.tgz#f5743cf61b5956ab95caf641a32becad5498c360"
+  integrity sha512-zD2ttmcLbP/gx9xTzp8gaUITOFHKsNklISR7H5WUyqMBhV2jH7ZB8wZueLUoC0E1MeChw+uCPexnunBZ+d/QxA==
   dependencies:
-    "@catcode/core-routing" "0.1.3"
-    "@plugger/utils" "0.0.2"
+    "@plugger/routing" "file:../Plugger.Frontend.Routing"
+    "@plugger/utils" "file:../Plugger.Frontend.Utils"
     lodash "^4.17.21"
     uuid "^11.0.3"
     zod "^3.23.8"
@@ -1610,10 +1598,10 @@
     uuid "^10.0.0"
     yarn "^1.22.22"
 
-"@plugger/routing@^0.1.4":
-  version "0.1.4"
-  resolved "http://verdaccio.mw.local/@plugger/routing/-/routing-0.1.4.tgz#3b6b39c7f6204352e29b7c296bfb733aa9670238"
-  integrity sha512-lSyy80r1dGq5NCDJb8KbM8PbJ8czU2g07ozvNZvagfTHryVN/qWpj+Vburiuo+i7/1GrDBIiVV4utqIRazki+g==
+"@plugger/routing@^0.1.5":
+  version "0.1.5"
+  resolved "http://verdaccio.mw.local/@plugger/routing/-/routing-0.1.5.tgz#f47b3c89e47a02430987b49bd00488871873dbfc"
+  integrity sha512-YLC1H06VRNvjMR7mvkJv2bL5bE7kgzLw5qO31Bz8q9Xr+eDCIBbR35CH4TEX4E0OOpBj47U3hQwUbOgdfm/iGw==
   dependencies:
     react "^18.3.1"
     react-dom "^18.3.1"
@@ -1623,7 +1611,7 @@
     yarn "^1.22.22"
 
 "@plugger/routing@file:../Plugger.Frontend.Routing":
-  version "0.1.4"
+  version "0.1.5"
   dependencies:
     react "^18.3.1"
     react-dom "^18.3.1"

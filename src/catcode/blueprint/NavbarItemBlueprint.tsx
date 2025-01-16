@@ -22,14 +22,14 @@ const NavbarItemBlueprint = createExtensionBluePrint({
             if (!routeGenerator) {
                 return <span>Invalid Route</span>;
             }
-
+            
             return (
-                <Link to={routeGenerator()}>{params?.title}</Link>
+                <Link to={routeGenerator()}>{params?.title || 'Unnamed Link'}</Link>
             );
         };
 
         return [
-            navbarItemRef.with(<Item />)
+            navbarItemRef.with(Item)
         ];
     }
 });

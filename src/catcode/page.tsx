@@ -31,27 +31,60 @@ const testNavbarItem = NavbarItemBlueprint.make({
 
 const testRouteBind = RouteBindBluePrint.make({
   params: {
-    path: 'test',
+    path: '/',
     routeRef: testPageRouteRef
   }  
 })
 
 
 
-const testPlugin = createPlugin({
-    id: 'test',
-    extensions: [
-        testPage,
-        testNavbarItem,
-        testRouteBind
-    ]
+
+const TestPage2 = () => {
+    return <div>test page 2</div>
+}
+
+const testPageRouteRef2 = createRouteRef();
+
+const testPage2 = PageBlueprint.make({
+    namespace: 'test', 
+    name: 'page',
+    kind: 'test2',
+    params: {
+        page: TestPage2,
+        routeRef: testPageRouteRef2
+
+    }
+})
+
+const testNavbarItem2 = NavbarItemBlueprint.make({
+    namespace: 'app',
+    name: 'routing',
+    kind: 'route2',
+    params: {
+        title: 'Test Page',
+        routeRef: testPageRouteRef2
+    }
+})
+
+const testRouteBind2 = RouteBindBluePrint.make({
+    kind: 'bind2',
+    namespace: 'app',
+    name: 'routing',
+  params: {
+    path: '/test2',
+    routeRef: testPageRouteRef2
+  }  
 })
 
 
+
 export {
-    testPlugin,
-    
     testPage,
     testNavbarItem,
-    testRouteBind
+    testRouteBind,
+
+
+    testPage2,
+    testNavbarItem2,
+    testRouteBind2
 }
