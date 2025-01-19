@@ -1,11 +1,15 @@
 
 
-import React, { ReactElement } from "react";
-import {createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode, rootComponentRef } from "@plugger/extension"
+import React from "react";
+import { ThemeProvider, createTheme } from "@mui/material";
+import {createExtensionBluePrint, createExtensionInputNode, rootComponentRef } from "@plugger/extension"
 import { appLayoutRef } from './AppLayoutBlueprint'
-import { AppRouter, RouteResolver, RouteResolverProvider } from "@plugger/routing";
+import { AppRouter} from "@plugger/routing";
 import { routeResolverDataRef } from "./RoutesBlueprint";
-import {Link, BrowserRouter, Routes, Route} from 'react-router-dom'
+import { themeRef } from "./ThemeBlueprint";
+
+createTheme
+
 
 const AppBlueprint = createExtensionBluePrint({
     kind: 'app',
@@ -15,18 +19,21 @@ const AppBlueprint = createExtensionBluePrint({
     output: [rootComponentRef],
     input: {
         app: createExtensionInputNode({ref: appLayoutRef}),
-        routeResolver: createExtensionInputNode({ref: routeResolverDataRef})
+        routeResolver: createExtensionInputNode({ref: routeResolverDataRef}), 
+        theme: createExtensionInputNode({ref: themeRef})
     },
     provider: ({input, config}) => {
         const AppRoot = () => {
             const App = input.app;
+
+            const theme = input?.theme || createTheme();
               
             return (
-                <BrowserRouter>
-                <RouteResolverProvider resolver={input.routeResolver}>
-                <App/>    
-                </RouteResolverProvider>
-                </BrowserRouter>
+                <ThemeProvider theme={theme}>
+                    <AppRouter resolver={input.routeResolver}>
+                        <App/>    
+                    </AppRouter>
+                </ThemeProvider>
         ) }  
         return [
         rootComponentRef.with(AppRoot), 
@@ -35,15 +42,11 @@ const AppBlueprint = createExtensionBluePrint({
 })
 
 /**
-                 <nav>
-                  <Link to="/">Home</Link>
-                  <Link to="/about">About</Link>
-                </nav>
-                <Routes>
-                  <Route path="/" element={<div>Home Page</div>} />
-                  <Route path="/about" element={<div>About Page</div>} />
-                </Routes>
+                <AppRouter resolver={input.routeResolver}>
+                    <App/>    
+                </AppRouter>
  */
+
 
 
 export {

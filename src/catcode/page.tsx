@@ -61,7 +61,7 @@ const testNavbarItem2 = NavbarItemBlueprint.make({
     name: 'routing',
     kind: 'route2',
     params: {
-        title: 'Test Page',
+        title: 'Test Page 2',
         routeRef: testPageRouteRef2
     }
 })

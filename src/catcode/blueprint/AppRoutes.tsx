@@ -1,10 +1,8 @@
 import React from 'react'
 import { createExtensionBluePrint, createExtensionInputNode } from "@plugger/extension";
 import { contentRef } from "./AppLayoutBlueprint";
-import { Routes, createRoutableComponent } from "@plugger/routing";
+import { RoutesBuilder, createRoutableComponent } from "@plugger/routing";
 import { pageMountPointDataRef, pageDataRef} from "./PageBlueprint";
-
-
 
 const AppRoutesBlueprint = createExtensionBluePrint({
     kind: 'routes',
@@ -29,13 +27,11 @@ const AppRoutesBlueprint = createExtensionBluePrint({
                 mountPoint: mountPoints[index],
                 component: page
             })
-        );
+    );
 
         const AppRoutes = () => {
             
-            
-            
-            return <Routes routeBinds={routableComponents}/>
+            return <RoutesBuilder routeBinds={routableComponents}/>
         }
         
         return [

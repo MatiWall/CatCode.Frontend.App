@@ -1,8 +1,7 @@
 import React, { ReactElement } from "react";
-import { coreDataRef, createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "@plugger/extension"
-import { coreHeaderRef } from "./HeaderBlueprint";
-import { AppBar, Toolbar, Typography, Drawer, List, ListItem, ListItemText, Box } from '@mui/material';
-
+import {createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "@plugger/extension"
+import {Typography, Drawer, Box } from '@mui/material';
+import { z } from 'zod';
 const appLayoutRef = createExtensionDataRef();
 
 const navbarRef = createExtensionDataRef();
@@ -25,18 +24,25 @@ const AppLayoutBlueprint = createExtensionBluePrint({
         content: createExtensionInputNode({ref: contentRef}),
         footer: createExtensionInputNode({ref: footerRef})
     },
+    configSchema: z.object({
+        disableFooter: z.boolean().default(false),
+        disableHeader: z.boolean().default(false),
+        disableNavbar:  z.boolean().default(false),
+    }),
     provider: ({input, config}) => {
 
         const Layout = () => {
             const Navbar = input.navbar;
             const Header = input.header;
             const Content = input.content;
+            console.log(Content)
             const Footer = input.footer;
 
             return (
             (
                 <Box sx={{ display: 'flex', height: '100vh', flexDirection: 'column' }}>
                 {/* Side Navbar (Drawer) */}
+                {!config.disableNavbar && 
                 <Drawer
                     sx={{
                     width: '240px',
@@ -51,7 +57,7 @@ const AppLayoutBlueprint = createExtensionBluePrint({
                 >
                       {Navbar ? <Navbar/> : <Typography variant="body1" align="center">Sidebar</Typography>}
                 </Drawer>
-    
+                }
                 <Box sx={{ 
                     flexGrow: 1, 
                     display: 'flex', 
@@ -69,10 +75,11 @@ const AppLayoutBlueprint = createExtensionBluePrint({
                     }}
                     >
                     {/* Header */}
-                    <Box sx={{ width: '100%', position: 'sticky', top: 0, zIndex: 1 }}>
-                        {Header ? <Header/> : <Typography variant="h6" align="center">Header</Typography>}
-                    </Box>
-    
+                    {!config.disableHeader && 
+                        <Box sx={{ width: '100%', position: 'sticky', top: 0, zIndex: 1 }}>
+                            {Header ? <Header/> : <Typography variant="h6" align="center">Header</Typography>}
+                        </Box>
+                    }
                     {/* Main Content Area */}
                     <Box sx={{ flexGrow: 1, mt: 2, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         {Content ? <Content/> : <Typography variant="body1" align="center" sx={{ border: '1px solid' }}>Main content</Typography>}
@@ -80,16 +87,17 @@ const AppLayoutBlueprint = createExtensionBluePrint({
                     </Box>
     
                     {/* Footer */}
-                    <Box
-                    component="footer"
-                    sx={{
-                        bgcolor: 'background.paper',
-                        py: 2,
-                        textAlign: 'center',
-                    }}
-                    >
-                    {Footer ? <Footer/> : <Typography variant="body2">Footer</Typography>}
-                    </Box>
+                    {!config.disableFooter && 
+                        <Box
+                        component="footer"
+                        sx={{
+                            bgcolor: 'background.paper',
+                            py: 2
+                        }}
+                        >
+                        {Footer ? <Footer/> : <Typography variant="body2">Footer</Typography>}
+                        </Box>
+                    }
                 </Box>
                 </Box>
     

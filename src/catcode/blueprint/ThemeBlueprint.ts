@@ -1,18 +1,31 @@
-import { ExtensionKind, coreDataRef, createExtensionBluePrint, createExtensionDataRef, createExtensionInputNode } from "../extension"
+import { createTheme } from "@mui/material";
 
-const coreThemeRef = createExtensionDataRef();
+import {createExtensionBluePrint, createExtensionDataRef } from "@plugger/extension"
 
+const themeRef = createExtensionDataRef();
+
+const pluggerTheme = createTheme({
+    
+});
 
 const ThemeBlueprint = createExtensionBluePrint({
     namespace: 'app',
-    name: 'navbar',
-    kind: ExtensionKind.Component,
-    attachToo: {namespace: 'app', name: 'app', kind: ExtensionKind.Component}, 
-    output: [coreThemeRef],
+    name: 'app',
+    kind: 'theme',
+    attachToo: {namespace: 'app', name: 'app', kind: 'app'}, 
+    output: [themeRef],
+    provider: ({input, config, params}) =>{
+        
+        const theme = params?.theme || pluggerTheme;
+        
+        return [
+            themeRef.with(theme)
+        ]
+    }
 })
 
 
 export {
     ThemeBlueprint, 
-    coreThemeRef
+    themeRef
 }

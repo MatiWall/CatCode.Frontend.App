@@ -1425,21 +1425,28 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@mui/core-downloads-tracker@^6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-6.3.1.tgz#e954cd6be58d92f3acc255089413357b6c4e08c6"
-  integrity sha512-2OmnEyoHpj5//dJJpMuxOeLItCCHdf99pjMFfUFdBteCunAK9jW+PwEo4mtdGcLs7P+IgZ+85ypd52eY4AigoQ==
+"@mui/core-downloads-tracker@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-6.4.0.tgz#b83f3f390d4e692a4f86f413c32f3131da38d492"
+  integrity sha512-6u74wi+9zeNlukrCtYYET8Ed/n9AS27DiaXCZKAD3TRGFaqiyYSsQgN2disW83pI/cM1Q2lJY1JX4YfwvNtlNw==
 
-"@mui/material@^6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@mui/material/-/material-6.3.1.tgz#75c51a4f4fefa9879fb197e8fae11dc6891a9d0b"
-  integrity sha512-ynG9ayhxgCsHJ/dtDcT1v78/r2GwQyP3E0hPz3GdPRl0uFJz/uUTtI5KFYwadXmbC+Uv3bfB8laZ6+Cpzh03gA==
+"@mui/icons-material@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-6.4.0.tgz#4e1b74578b6c4987c341c9739f5f40987c44ccd1"
+  integrity sha512-zF0Vqt8a+Zp2Oz8P+WvJflba6lLe3PhxIz1NNqn+n4A+wKLPbkeqY8ShmKjPyiCTg0RMbPrp993oUDl9xGsDlQ==
   dependencies:
     "@babel/runtime" "^7.26.0"
-    "@mui/core-downloads-tracker" "^6.3.1"
-    "@mui/system" "^6.3.1"
+
+"@mui/material@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@mui/material/-/material-6.4.0.tgz#5f2f09ac66fc9422716056f9b36dd52c9f7cc473"
+  integrity sha512-hNIgwdM9U3DNmowZ8mU59oFmWoDKjc92FqQnQva3Pxh6xRKWtD2Ej7POUHMX8Dwr1OpcSUlT2+tEMeLb7WYsIg==
+  dependencies:
+    "@babel/runtime" "^7.26.0"
+    "@mui/core-downloads-tracker" "^6.4.0"
+    "@mui/system" "^6.4.0"
     "@mui/types" "^7.2.21"
-    "@mui/utils" "^6.3.1"
+    "@mui/utils" "^6.4.0"
     "@popperjs/core" "^2.11.8"
     "@types/react-transition-group" "^4.4.12"
     clsx "^2.1.1"
@@ -1448,19 +1455,19 @@
     react-is "^19.0.0"
     react-transition-group "^4.4.5"
 
-"@mui/private-theming@^6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@mui/private-theming/-/private-theming-6.3.1.tgz#7069e2471a9e456c2784a7df1f8103bf264e72eb"
-  integrity sha512-g0u7hIUkmXmmrmmf5gdDYv9zdAig0KoxhIQn1JN8IVqApzf/AyRhH3uDGx5mSvs8+a1zb4+0W6LC260SyTTtdQ==
+"@mui/private-theming@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@mui/private-theming/-/private-theming-6.4.0.tgz#d17e4bc63462d7b54e71eeb8aa660dab8aa4097c"
+  integrity sha512-rNHci8MP6NOdEWAfZ/RBMO5Rhtp1T6fUDMSmingg9F1T6wiUeodIQ+NuTHh2/pMoUSeP9GdHdgMhMmfsXxOMuw==
   dependencies:
     "@babel/runtime" "^7.26.0"
-    "@mui/utils" "^6.3.1"
+    "@mui/utils" "^6.4.0"
     prop-types "^15.8.1"
 
-"@mui/styled-engine@^6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@mui/styled-engine/-/styled-engine-6.3.1.tgz#eed2b1cc6e99c2079eed981facab687b0fe6667a"
-  integrity sha512-/7CC0d2fIeiUxN5kCCwYu4AWUDd9cCTxWCyo0v/Rnv6s8uk6hWgJC3VLZBoDENBHf/KjqDZuYJ2CR+7hD6QYww==
+"@mui/styled-engine@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@mui/styled-engine/-/styled-engine-6.4.0.tgz#1f01a5218964f0e3bd8eb13170e12b5f55c4f159"
+  integrity sha512-ek/ZrDujrger12P6o4luQIfRd2IziH7jQod2WMbLqGE03Iy0zUwYmckRTVhRQTLPNccpD8KXGcALJF+uaUQlbg==
   dependencies:
     "@babel/runtime" "^7.26.0"
     "@emotion/cache" "^11.13.5"
@@ -1469,16 +1476,16 @@
     csstype "^3.1.3"
     prop-types "^15.8.1"
 
-"@mui/system@^6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@mui/system/-/system-6.3.1.tgz#7e51745c9d56423173a0dba7ea2b9bcb6232a90f"
-  integrity sha512-AwqQ3EAIT2np85ki+N15fF0lFXX1iFPqenCzVOSl3QXKy2eifZeGd9dGtt7pGMoFw5dzW4dRGGzRpLAq9rkl7A==
+"@mui/system@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@mui/system/-/system-6.4.0.tgz#6501ff41bf7bc3e85cd8227fdd249eaa079bc22e"
+  integrity sha512-wTDyfRlaZCo2sW2IuOsrjeE5dl0Usrs6J7DxE3GwNCVFqS5wMplM2YeNiV3DO7s53RfCqbho+gJY6xaB9KThUA==
   dependencies:
     "@babel/runtime" "^7.26.0"
-    "@mui/private-theming" "^6.3.1"
-    "@mui/styled-engine" "^6.3.1"
+    "@mui/private-theming" "^6.4.0"
+    "@mui/styled-engine" "^6.4.0"
     "@mui/types" "^7.2.21"
-    "@mui/utils" "^6.3.1"
+    "@mui/utils" "^6.4.0"
     clsx "^2.1.1"
     csstype "^3.1.3"
     prop-types "^15.8.1"
@@ -1488,10 +1495,10 @@
   resolved "https://registry.yarnpkg.com/@mui/types/-/types-7.2.21.tgz#63f50874eda8e4a021a69aaa8ba9597369befda2"
   integrity sha512-6HstngiUxNqLU+/DPqlUJDIPbzUBxIVHb1MmXP0eTWDIROiCR2viugXpEif0PPe2mLqqakPzzRClWAnK+8UJww==
 
-"@mui/utils@^6.3.1":
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/@mui/utils/-/utils-6.3.1.tgz#0ec705d4a0bbcb69fca8da5225f9c52f8ac49905"
-  integrity sha512-sjGjXAngoio6lniQZKJ5zGfjm+LD2wvLwco7FbKe1fu8A7VIFmz2SwkLb+MDPLNX1lE7IscvNNyh1pobtZg2tw==
+"@mui/utils@^6.4.0":
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/@mui/utils/-/utils-6.4.0.tgz#817d8135794b8741ad0267b90dc656361f1c0030"
+  integrity sha512-woOTATWNsTNR3YBh2Ixkj3l5RaxSiGoC9G8gOpYoFw1mZM77LWJeuMHFax7iIW4ahK0Cr35TF9DKtrafJmOmNQ==
   dependencies:
     "@babel/runtime" "^7.26.0"
     "@mui/types" "^7.2.21"
@@ -1500,18 +1507,17 @@
     prop-types "^15.8.1"
     react-is "^19.0.0"
 
-"@plugger/app@^0.1.6":
-  version "0.1.6"
-  resolved "http://verdaccio.mw.local/@plugger/app/-/app-0.1.6.tgz#ddbf06f0ea429693afe4bcdea7621c8648079ca2"
-  integrity sha512-DnZn8bpZpQAYBFeWe7c8IsiD6lj9zfmZaQk3YFnJ8KALWLna18s5Nb7RiyEftLdzjucajNlTusvf2h7QJS4NQg==
+"@plugger/app@^0.1.9":
+  version "0.1.9"
+  resolved "http://verdaccio.mw.local/@plugger/app/-/app-0.1.9.tgz#950c3d17ef07b25740efdeb7a5c75e1fe51dff75"
+  integrity sha512-sIrFRGk8Nn3Y4Mx0XuActoZUISnzZIDA7eY1JDE6OnQIlka5PIZeO+rkpANkWnJMfxVEFSyJa1zwc9vYkRRkog==
   dependencies:
     "@babel/preset-typescript" "^7.26.0"
     "@plugger/configuration-core" "^0.1.2"
-    "@plugger/configuration-loader" "^0.1.15-dev"
-    "@plugger/extension" "^0.1.3"
-    "@plugger/routing" "^0.1.3"
+    "@plugger/configuration-loader" "^0.1.15-dev2"
+    "@plugger/extension" "^0.1.5"
     "@plugger/utils" "^0.0.2"
-    react "^18.3.1"
+    react "^19.0.0"
 
 "@plugger/cli-core@0.1.2":
   version "0.1.2"
@@ -1538,23 +1544,10 @@
     yaml "^2.6.1"
     zod "^3.24.1"
 
-"@plugger/configuration-loader@0.1.15-dev2":
+"@plugger/configuration-loader@0.1.15-dev2", "@plugger/configuration-loader@^0.1.15-dev2":
   version "0.1.15-dev2"
   resolved "http://verdaccio.mw.local/@plugger/configuration-loader/-/configuration-loader-0.1.15-dev2.tgz#43679d2708ce4f0a98faa3e9881518534f739d71"
   integrity sha512-DwR1lh95Qng/4G4drWDTLAQg+Y96dMhXggrcMfd6dkWjMpH4bKpc62TI+0c7umQdpP62bdlerMgsCxkmZhYlJg==
-  dependencies:
-    "@plugger/configuration-core" "^0.1.2"
-    "@plugger/utils" "^0.0.2"
-    fs "^0.0.1-security"
-    tsx "^4.19.2"
-    typescript "^5.7.2"
-    yaml "^2.6.1"
-    zod "^3.24.1"
-
-"@plugger/configuration-loader@^0.1.15-dev":
-  version "0.1.15-dev"
-  resolved "http://verdaccio.mw.local/@plugger/configuration-loader/-/configuration-loader-0.1.15-dev.tgz#9eee78dbc20bdc1d9d4785eb5a06334f1c711198"
-  integrity sha512-EeZL2ay6uTC5MYt9c/yfz5Gq4eVK/8SY2XhQgo+zrvivn8ZxDL5L8YAeio2MuRs8xK4KEMDJAETGWvKGpJHRmA==
   dependencies:
     "@plugger/configuration-core" "^0.1.2"
     "@plugger/utils" "^0.0.2"
@@ -1575,33 +1568,21 @@
     uuid "^11.0.3"
     zod "^3.23.8"
 
-"@plugger/extension@^0.1.3":
-  version "0.1.3"
-  resolved "http://verdaccio.mw.local/@plugger/extension/-/extension-0.1.3.tgz#f5743cf61b5956ab95caf641a32becad5498c360"
-  integrity sha512-zD2ttmcLbP/gx9xTzp8gaUITOFHKsNklISR7H5WUyqMBhV2jH7ZB8wZueLUoC0E1MeChw+uCPexnunBZ+d/QxA==
+"@plugger/extension@^0.1.5":
+  version "0.1.5"
+  resolved "http://verdaccio.mw.local/@plugger/extension/-/extension-0.1.5.tgz#6d87082f207cb00cd53c9d12029a302498943c5a"
+  integrity sha512-wgg1Dm6eIyVmXEulGpnYCI8riErOlmxHhbtKiajhcUs35g/EI6xTUyjacKE+hJGXU2WZ8lzmhsGTfFOkbPlAEg==
   dependencies:
-    "@plugger/routing" "file:../Plugger.Frontend.Routing"
-    "@plugger/utils" "file:../Plugger.Frontend.Utils"
+    "@plugger/utils" "^0.0.2"
     lodash "^4.17.21"
+    react "^19.0.0"
     uuid "^11.0.3"
     zod "^3.23.8"
 
-"@plugger/routing@^0.1.3":
-  version "0.1.3"
-  resolved "http://verdaccio.mw.local/@plugger/routing/-/routing-0.1.3.tgz#e8d26e1ea488b0b38f94f3bdc5abe725c2ef8740"
-  integrity sha512-nzkfv1gVfXlQuQvN83XsgJrlwiYCGWpWHaxSEM/JCCkD8de+DR2tJOE+s+yZme1TdxPQhJGX6b64Yw9xnHZVlQ==
-  dependencies:
-    react "^18.3.1"
-    react-dom "^18.3.1"
-    react-router-dom "^6.27.0"
-    typescript "^5.6.3"
-    uuid "^10.0.0"
-    yarn "^1.22.22"
-
-"@plugger/routing@^0.1.5":
-  version "0.1.5"
-  resolved "http://verdaccio.mw.local/@plugger/routing/-/routing-0.1.5.tgz#f47b3c89e47a02430987b49bd00488871873dbfc"
-  integrity sha512-YLC1H06VRNvjMR7mvkJv2bL5bE7kgzLw5qO31Bz8q9Xr+eDCIBbR35CH4TEX4E0OOpBj47U3hQwUbOgdfm/iGw==
+"@plugger/routing@^0.1.6":
+  version "0.1.6"
+  resolved "http://verdaccio.mw.local/@plugger/routing/-/routing-0.1.6.tgz#3008a9e771a3233e4710bdc188df2707cfc39c6f"
+  integrity sha512-AxYkZ77DtRwt1gDcNhkkLbmH9CrC5CzsiCbr+SH4rZYe6VQUP+dk8k0kI3L8SNzn0GBeEOws0boDoothCOahHQ==
   dependencies:
     react "^18.3.1"
     react-dom "^18.3.1"
@@ -1611,7 +1592,7 @@
     yarn "^1.22.22"
 
 "@plugger/routing@file:../Plugger.Frontend.Routing":
-  version "0.1.5"
+  version "0.1.6"
   dependencies:
     react "^18.3.1"
     react-dom "^18.3.1"
@@ -3341,6 +3322,11 @@ react@^18.3.1:
   integrity sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==
   dependencies:
     loose-envify "^1.1.0"
+
+react@^19.0.0:
+  version "19.0.0"
+  resolved "http://verdaccio.mw.local/react/-/react-19.0.0.tgz#6e1969251b9f108870aa4bff37a0ce9ddfaaabdd"
+  integrity sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ==
 
 reflect.getprototypeof@^1.0.6, reflect.getprototypeof@^1.0.8:
   version "1.0.8"

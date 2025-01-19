@@ -1,7 +1,7 @@
 import React from 'react'
 import { createExtensionBluePrint, createExtensionInputNode, createExtensionDataRef } from "@plugger/extension"
 
-import {AppRouter, RouteResolver, Routes, createRoutableComponent, createRouteResolver} from '@plugger/routing'
+import {AppRouter, RouteResolver, createRoutableComponent, createRouteResolver} from '@plugger/routing'
 
 
 const routeResolverDataRef = createExtensionDataRef();

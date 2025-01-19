@@ -14,13 +14,14 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@mui/material": "^6.3.1",
-    "@plugger/app": "^0.1.6",
+    "@mui/icons-material": "^6.4.0",
+    "@mui/material": "^6.4.0",
+    "@plugger/app": "^0.1.9",
     "@plugger/cli-core": "0.1.2",
     "@plugger/configuration-core": "^0.1.2",
     "@plugger/configuration-loader": "0.1.15-dev2",
     "@plugger/extension": "0.1.2",
-    "@plugger/routing": "^0.1.5",
+    "@plugger/routing": "^0.1.6",
     "@plugger/utils": "^0.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
