@@ -1,14 +1,9 @@
 import RootApp from './catcode/App'
 
 
-
 function App() {
 
-  return (
-    <>
-    <RootApp/>
-    </>
-  )
+  return <RootApp/>
 }
 
 export default App;
