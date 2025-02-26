@@ -1478,10 +1478,10 @@
     typescript "^5.7.3"
     vitest "^3.0.1"
 
-"@plugger/frontend-components@^0.0.4":
-  version "0.0.4"
-  resolved "http://verdaccio.mw.local/@plugger/frontend-components/-/frontend-components-0.0.4.tgz#ad7fe2dc0dbf5c92435c9ac89e429a9ef836f08e"
-  integrity sha512-ZF4LOeNbfOKMgNWkaAN1EFnXyWwxda53YQmDDLs/O+NMcfUjudB5KtrPwemwmgZzV0K7XSE5TF45IVW3kdCHAg==
+"@plugger/frontend-components@^0.0.7":
+  version "0.0.7"
+  resolved "http://verdaccio.mw.local/@plugger/frontend-components/-/frontend-components-0.0.7.tgz#b5a76a6f035bfc0b189d1836ffc9f44cae15bbde"
+  integrity sha512-BxSoPBKzFYhEUqDBIKsvRBdL1njKKOEy710aDBzcnC3G/AC7gXmetxfR0ugwW3HwXHEpRURcgVcHpsHLoLP44w==
   dependencies:
     "@emotion/react" "^11.14.0"
     "@emotion/styled" "^11.14.0"

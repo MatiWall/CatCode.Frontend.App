@@ -6,19 +6,30 @@ import { createRouteRef , useRouteRef} from "@plugger/frontend-routing";
 import { GitHub } from '@mui/icons-material';
 //import {Rancher, ArgoCD} from '@plugger/frontend-components'
 import {
-    LinkBar
+    LinkBar,
+    ArgoIcon,
+    RancherIcon,
+    GrafanaIcon,
+    LinkItem
 } from '@plugger/frontend-components'
 
 
 const links = [
     { icon: <GitHub />, url: 'https://github.com', title: 'GitHub' },
-    { icon: <GitHub />, url: 'https://argocd.mw.local', title: 'ArgoCD'}
+    { icon: <ArgoIcon />, url: 'https://argocd.mw.local', title: 'ArgoCD'},
+    { icon: <ArgoIcon />, url: 'http://argo-workflow.mw.local', title: 'ArgoWorkFlow'},
+    { icon: <RancherIcon />, url: 'https://rancher.mw.local', title: 'Rancher'},
+    { icon: <div style={{width:'2rem', height:'2rem'}}><GrafanaIcon /></div>, url: 'http://grafana.mw.local', title: 'Grafana'}
 ]
 
 const TestPage2 = () => {
-return <>
-<LinkBar links={links}/>
 
+
+
+return <>
+<LinkBar>
+    {links.map(link => <LinkItem sx={{width: '5rem', height: '5rem'}} url={link.url} title={link.title} icon={link.icon}/>)}
+    </LinkBar>
 </>
 }
 
