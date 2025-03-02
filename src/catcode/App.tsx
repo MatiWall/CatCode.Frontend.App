@@ -15,6 +15,8 @@ import {
     NavbarToolBlueprint,
     HeaderIconBlueprint
 } from '@plugger/frontend-blueprints'
+import { catalogPlugin } from "@plugger/frontend-plugin-catalog";
+
 
 import {homePlugin} from './pages'
 
@@ -34,7 +36,8 @@ const app = createApp({
 
     ],
     plugins: [
-        homePlugin
+        homePlugin,
+        catalogPlugin
     ],
     configLoader: new EnvConfigLoader('APP_CONFIG')
 });

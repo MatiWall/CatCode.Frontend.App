@@ -20,9 +20,11 @@
     "@plugger/configuration-core": "^0.1.2",
     "@plugger/configuration-loader": "^0.1.15-dev2",
     "@plugger/frontend-app": "^0.2.1",
-    "@plugger/frontend-blueprints": "^0.1.7",
+    "@plugger/frontend-blueprints": "^0.1.9",
     "@plugger/frontend-components": "^0.0.7",
     "@plugger/frontend-extension": "^1.0.2",
+    "@plugger/frontend-plugin-catalog": "^0.0.6",
+    "@plugger/frontend-routing": "^0.3.6",
     "@plugger/utils": "^0.0.2",
     "react": "19",
     "react-dom": "19"

@@ -10,16 +10,17 @@ import {
     ArgoIcon,
     RancherIcon,
     GrafanaIcon,
+    GitHubIcon,
     LinkItem
 } from '@plugger/frontend-components'
 
 
 const links = [
-    { icon: <GitHub />, url: 'https://github.com', title: 'GitHub' },
+    { icon: <GitHubIcon />, url: 'https://github.com', title: 'GitHub' },
     { icon: <ArgoIcon />, url: 'https://argocd.mw.local', title: 'ArgoCD'},
     { icon: <ArgoIcon />, url: 'http://argo-workflow.mw.local', title: 'ArgoWorkFlow'},
     { icon: <RancherIcon />, url: 'https://rancher.mw.local', title: 'Rancher'},
-    { icon: <div style={{width:'2rem', height:'2rem'}}><GrafanaIcon /></div>, url: 'http://grafana.mw.local', title: 'Grafana'}
+    { icon: <GrafanaIcon />, url: 'http://grafana.mw.local', title: 'Grafana'}
 ]
 
 const TestPage2 = () => {
@@ -59,9 +60,9 @@ params: {
 const test2RouteBind = RouteBindBluePrint.make({
     namespace: 'navbar', 
     name: 'item2',
-    kind: 'bind',
+    kind: 'bind2',
 params: {
-path: '/',
+path: '/test',
 routeRef: homePageRouteRef
 }  
 })
